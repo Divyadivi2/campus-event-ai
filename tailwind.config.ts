@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Custom colors for our event app
+				event: {
+					'primary': '#6366F1',
+					'secondary': '#8B5CF6',
+					'accent': '#F59E0B',
+					'success': '#10B981',
+					'warning': '#F59E0B',
+					'error': '#EF4444',
+					'info': '#3B82F6',
 				}
 			},
 			borderRadius: {
