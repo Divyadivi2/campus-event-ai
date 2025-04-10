@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/layout/Navbar";
@@ -12,7 +11,13 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { FileUpload, User, Briefcase, Sparkles, GraduationCap } from "lucide-react";
+import { 
+  Upload, // Changed from FileUpload to Upload
+  User, 
+  Briefcase, 
+  Sparkles, 
+  GraduationCap 
+} from "lucide-react";
 import RecommendedEvents from "@/components/profile/RecommendedEvents";
 
 export default function UserProfile() {
@@ -47,6 +52,10 @@ export default function UserProfile() {
           file.type === "application/msword" || 
           file.type === "application/vnd.openxmlformats-officedocument.wordprocessingml.document") {
         setResumeFile(file);
+        toast({
+          title: "Resume uploaded",
+          description: "Click 'Extract Skills' to analyze your resume",
+        });
       } else {
         toast({
           title: "Invalid file type",
@@ -174,7 +183,7 @@ export default function UserProfile() {
                         </CardHeader>
                         <CardContent className="space-y-4">
                           <div className="border-2 border-dashed rounded-lg p-6 text-center">
-                            <FileUpload className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
+                            <Upload className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
                             <p className="mb-2 text-sm">Drag and drop your resume or click to browse</p>
                             <p className="text-xs text-muted-foreground mb-4">PDF or Word (docx, doc) files only</p>
                             
@@ -194,7 +203,7 @@ export default function UserProfile() {
                             <div className="mt-4">
                               <div className="flex items-center justify-between p-2 border rounded">
                                 <div className="flex items-center gap-2">
-                                  <FileUpload className="h-4 w-4" />
+                                  <Upload className="h-4 w-4" />
                                   <span className="text-sm truncate max-w-[200px]">{resumeFile.name}</span>
                                 </div>
                                 <Button 
