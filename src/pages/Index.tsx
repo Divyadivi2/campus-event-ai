@@ -4,13 +4,15 @@ import Navbar from "@/components/layout/Navbar";
 import Sidebar from "@/components/layout/Sidebar";
 import FeaturedEvent from "@/components/event/FeaturedEvent";
 import EventsGrid from "@/components/event/EventsGrid";
-import { mockEvents } from "@/data/mockData";
+import { mockEvents, mockUsers } from "@/data/mockData";
 import { Button } from "@/components/ui/button";
 import { Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Index() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const user = mockUsers[0]; // Using the first mock user
   
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -44,9 +46,11 @@ export default function Index() {
               <div className="mb-8">
                 <div className="flex items-center justify-between mb-4">
                   <h2 className="text-2xl font-bold">Featured Events</h2>
-                  <Button variant="outline" className="gap-2">
-                    <Sparkles className="h-4 w-4 text-event-accent" />
-                    <span>AI Recommendations</span>
+                  <Button variant="outline" className="gap-2" asChild>
+                    <Link to="/profile">
+                      <Sparkles className="h-4 w-4 text-event-accent" />
+                      <span>AI Recommendations</span>
+                    </Link>
                   </Button>
                 </div>
                 

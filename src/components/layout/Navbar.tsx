@@ -50,10 +50,12 @@ export default function Navbar({ toggleSidebar }: { toggleSidebar: () => void })
             <span className="sr-only">Notifications</span>
           </Button>
           
-          <Avatar className="h-9 w-9">
-            <AvatarImage src={user.avatar} alt={user.name} />
-            <AvatarFallback>{user.name.charAt(0)}</AvatarFallback>
-          </Avatar>
+          <Link to="/profile">
+            <Avatar className="h-9 w-9 cursor-pointer">
+              <AvatarImage src={user.avatar} alt={user.name} />
+              <AvatarFallback>{user.name.charAt(0)}</AvatarFallback>
+            </Avatar>
+          </Link>
         </div>
       </div>
     </header>
