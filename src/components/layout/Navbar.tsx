@@ -39,7 +39,11 @@ export default function Navbar({ toggleSidebar }: { toggleSidebar: () => void })
           />
         </div>
         
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 md:gap-4">
+          <Button variant="outline" size="sm" className="hidden md:flex" asChild>
+            <Link to="/premium">For Organizers</Link>
+          </Button>
+          
           <Button variant="ghost" size="icon" className="relative">
             <Bell className="h-5 w-5" />
             <span className="absolute top-1 right-1 h-2 w-2 rounded-full bg-event-error" />
