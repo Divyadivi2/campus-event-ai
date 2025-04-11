@@ -4,7 +4,7 @@ import {
   Award, 
   Trophy, 
   Sparkles, 
-  Certificate,
+  Scroll,
   BadgeCheck
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -59,7 +59,7 @@ const getBadgeDetails = (type: BadgeType) => {
       };
     case "certificate":
       return {
-        icon: <Certificate className="h-5 w-5 mr-1" />,
+        icon: <Scroll className="h-5 w-5 mr-1" />,
         label: "Certificate",
         color: "bg-orange-100 text-orange-800 hover:bg-orange-200"
       };

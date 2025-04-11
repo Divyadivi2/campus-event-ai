@@ -1,9 +1,8 @@
-
 import React, { useState } from "react";
 import Badge, { BadgeType } from "@/components/Badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shield, Certificate } from "lucide-react";
+import { Shield, Scroll } from "lucide-react";
 
 interface UserBadgeItem {
   id: string;
@@ -70,7 +69,7 @@ const UserBadges = () => {
               Badges
             </TabsTrigger>
             <TabsTrigger value="certificates" className="flex items-center gap-2">
-              <Certificate className="h-4 w-4" />
+              <Scroll className="h-4 w-4" />
               Certificates
             </TabsTrigger>
           </TabsList>
