@@ -5,7 +5,8 @@ import {
   Trophy, 
   Sparkles, 
   Scroll,
-  BadgeCheck
+  BadgeCheck,
+  Star
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Badge as UIBadge } from "@/components/ui/badge";
@@ -16,7 +17,8 @@ export type BadgeType =
   | "mentor" 
   | "organizer" 
   | "speaker"
-  | "certificate";
+  | "certificate"
+  | "premium";
 
 interface BadgeProps {
   type: BadgeType;
@@ -62,6 +64,12 @@ const getBadgeDetails = (type: BadgeType) => {
         icon: <Scroll className="h-5 w-5 mr-1" />,
         label: "Certificate",
         color: "bg-orange-100 text-orange-800 hover:bg-orange-200"
+      };
+    case "premium":
+      return {
+        icon: <Star className="h-5 w-5 mr-1" />,
+        label: "Premium",
+        color: "bg-rose-100 text-rose-800 hover:bg-rose-200"
       };
     default:
       return {
